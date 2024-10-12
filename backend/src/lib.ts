@@ -1,7 +1,13 @@
 export const passwordGenerator = (amountOfChars: number) => {
     if(amountOfChars <= 0) {
-       return "zero numbers"
+        return "zero numbers";
     }
-    const randomNumbers = Math.random() * amountOfChars;
-    console.log(randomNumbers)
+    const password = [];
+    for (let i = 0; i < amountOfChars; i++) {
+      const randomNumbers = Math.floor(Math.random()*10);
+      console.log(randomNumbers)
+      password.push(randomNumbers);
+    }
+
+    return password;
 }
