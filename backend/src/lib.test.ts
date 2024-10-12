@@ -12,4 +12,11 @@ test("Should return one random number", () => {
     const amountOfChars = 1;
     const result = passwordGenerator(amountOfChars)
     deepEqual(result?.length, 1);
-  });
+});
+
+
+test("Should return 5 random numbers", () => {
+    const amountOfChars = 5;
+    const result = passwordGenerator(amountOfChars)
+    deepEqual(result?.length, 5);
+});
