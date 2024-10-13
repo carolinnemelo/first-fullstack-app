@@ -1,11 +1,12 @@
-import { deepEqual } from "node:assert/strict";
+import { deepEqual, throws } from "node:assert/strict";
 import test from "node:test";
 import { buildPassword } from "../lib";
 
-test.skip("Should return error when password length is bellow or equal to zero", () => {
+test("Should return error when password length is bellow or equal to zero", () => {
   const passwordLength = 0;
-  const result = buildPassword(passwordLength);
-  deepEqual(result, "Invalid Length");
+  throws(() => {
+    buildPassword(passwordLength);
+  }, /Invalid length/);
 });
 
 test.skip("Should return one random letter or number", () => {

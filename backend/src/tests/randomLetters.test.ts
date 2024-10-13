@@ -4,7 +4,6 @@ import { generateRandomLetters } from "../lib";
 
 test("Should throw error when 0 is given", () => {
   const passwordLength = 0;
-
   throws(() => {
     generateRandomLetters(passwordLength);
   }, /Invalid amount of letters/);
