@@ -2,7 +2,11 @@ const form = document.querySelector("#keyForm");
 const amountOfCharsElement = document.querySelector("#amountOfCharacters") as HTMLFormElement;
 
 const generateKey = async (amountOfChars: number) => {
-  const fetchKey = await fetch("http://localhost:3000");
+  const fetchKey = await fetch("http://localhost:3000", {
+    method: "post",
+    body: "3",
+  });
+  
   console.log(fetchKey);
 };
 
