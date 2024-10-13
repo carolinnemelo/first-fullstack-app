@@ -2,13 +2,22 @@ export const buildPassword = (passwordLength: number) => {
   if (passwordLength <= 0) {
     throw new Error("Invalid length");
   }
-  const password = [];
-  for (let i = 0; i < passwordLength; i++) {
-    const randomNumbers = Math.floor(Math.random() * 10);
-    password.push(randomNumbers);
+  if (passwordLength === 1) {
+    const password = generateRandomNumbers(passwordLength);
+    console.log({ password })
+
+    return password;
   }
-  const parsedPassword = password.join("").toString()
-  return parsedPassword;
+  const amountOfNumbers = Math.floor(Math.random() * passwordLength + 1);
+  const amountOfLetters = passwordLength - amountOfNumbers;
+  const randomNumbers = generateRandomNumbers(amountOfNumbers);
+  const randomLetters = generateRandomLetters(amountOfLetters);
+  const password = randomLetters + randomNumbers;
+  console.log({ randomLetters })
+  console.log({ randomNumbers })
+
+  console.log({ password })
+  return password;
 };
 
 export const generateRandomNumbers = (amountOfNumbers: number) => {
