@@ -4,8 +4,9 @@ export const passwordGenerator = (amountOfChars: number) => {
     }
     const password = [];
     for (let i = 0; i < amountOfChars; i++) {
-      const randomNumbers = Math.floor(Math.random()*10);
+      const randomNumbers = Math.floor(Math.random() * 10);
       password.push(randomNumbers);
     }
     return password;
 }
+
