@@ -26,7 +26,7 @@ export const generateRandomNumbers = (amountOfNumbers: number) => {
 
 export const generateRandomLetters = (amountOfLetters: number) => {
   if (amountOfLetters <= 0) {
-    return "zero letters";
+    throw new Error("Invalid amount of letters");
   }
   const alphabet = [...Array(26)].map(
     (v, i) => (v = String.fromCharCode(i + 97))
