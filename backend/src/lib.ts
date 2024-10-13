@@ -7,5 +7,6 @@ export const buildPassword = (passwordLength: number) => {
     const randomNumbers = Math.floor(Math.random() * 10);
     password.push(randomNumbers);
   }
-  return password;
+  const parsedPassword = password.join("").toString()
+  return parsedPassword;
 };
