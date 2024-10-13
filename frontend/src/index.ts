@@ -36,6 +36,6 @@ rangeValueElement.textContent = amountOfChars;
 
 copyButtonElement.addEventListener("click", () => {
 navigator.clipboard.writeText(displayKeyElement.innerHTML).then(() => {
-    copyButtonElement.textContent = "Copied"
+    copyButtonElement.textContent = "Copied";
 });
 })
