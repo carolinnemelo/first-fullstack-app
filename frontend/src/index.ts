@@ -7,6 +7,8 @@ const displayKeyElement = document.querySelector(
   "#displayKey"
 ) as HTMLParagraphElement;
 
+const rangeValueElement = document.querySelector("#rangeValue") as HTMLElement;
+
 const requestGeneratedKey = async (amountOfChars: number) => {
   const fetchKey = await fetch("http://localhost:3000", {
     method: "post",
@@ -23,3 +25,8 @@ form?.addEventListener("submit", async (event) => {
   displayKeyElement.textContent = generatedKey;
 
 });
+
+amountOfCharsElement.addEventListener("input", (event) => {
+    const amountOfChars = amountOfCharsElement.value;
+    rangeValueElement.textContent = amountOfChars;
+  });
