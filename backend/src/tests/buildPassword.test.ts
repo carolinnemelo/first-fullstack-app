@@ -28,9 +28,11 @@ test("Should return 5 random letters and numbers", () => {
     (v, i) => (v = String.fromCharCode(i + 97))
   );
   const passwordLength = 5;
-  const numbersArr = new Array(10).fill(null).map((_, i) => i);
+  const numbersArr = new Array(10).fill(null).map((_, i) => i.toString());
   const result = buildPassword(passwordLength);
-  const boolean = result.every((e) => alphabet.includes(e) || numbersArr.includes(e));
+  const boolean = result.every((e) => {
+    return alphabet.includes(e) || numbersArr.includes(e);
+  });
 
   deepEqual(boolean, true);
   deepEqual(result?.length, 5);
