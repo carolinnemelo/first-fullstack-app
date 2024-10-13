@@ -8,6 +8,9 @@ const displayKeyElement = document.querySelector(
 ) as HTMLParagraphElement;
 
 const rangeValueElement = document.querySelector("#rangeValue") as HTMLElement;
+const copyButtonElement = document.querySelector(
+  "#copyButton"
+) as HTMLButtonElement;
 
 const requestGeneratedKey = async (amountOfChars: number) => {
   const fetchKey = await fetch("http://localhost:3000", {
@@ -30,3 +33,7 @@ amountOfCharsElement.addEventListener("input", (event) => {
     const amountOfChars = amountOfCharsElement.value;
     rangeValueElement.textContent = amountOfChars;
 });
+
+copyButtonElement.addEventListener("click", () => {
+    navigator.clipboard.writeText(displayKeyElement.innerHTML)
+})
