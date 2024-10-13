@@ -1,4 +1,6 @@
+import { rejects } from "assert";
 import http from "http";
+import { resolve } from "path";
 
 const port = 3000;
 const host = "localhost";
@@ -14,11 +16,13 @@ const server = http
   .listen(port);
 
 const getBody = async (req: any) => {
-  const body = await req.on("data", async (chunk: any) => {
+  return new Promise((resolve, reject) => {
     let body = "";
-    body += chunk;
-    return body;
+
+    req.on("data", async (chunk: any) => {
+      body += chunk.toString()
+    });
+
+
   });
-  console.log({ body });
-  return body;
 };
