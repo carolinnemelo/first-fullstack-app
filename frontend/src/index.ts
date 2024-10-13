@@ -6,9 +6,10 @@ const generateKey = async (amountOfChars: number) => {
   console.log(fetchKey);
 };
 
-form?.addEventListener("submit", (event) => {
+form?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const amountOfChars = amountOfCharsElement.value;
-  console.log(amountOfChars)
+  const generatedKey = await generateKey(amountOfChars);
+  console.log(generatedKey)
   console.log("submitted from addEventListener");
 });
