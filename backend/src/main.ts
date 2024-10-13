@@ -1,6 +1,5 @@
 import http from "http";
 import { buildPassword } from "./lib";
-import { error } from "console";
 
 const port = 3000;
 const host = "localhost";
@@ -10,8 +9,10 @@ const server = http
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.write("Hello world!");
     const passwordLength = await handleReq(req);
-    const turingKey = await buildPassword(passwordLength);
-    console.log(turingKey);
+    if (typeof passwordLength !== "number") {
+        return "passwordLength is not a number"
+    }
+    const turingKey = buildPassword(passwordLength);
     res.end();
   })
   .listen(port);
@@ -21,6 +22,7 @@ const handleReq = async (req: any) => {
   try {
     const reqBody = await getBody(req);
     const passwordLength = parseInt(reqBody);
+    return passwordLength;
   } catch (err) {
     console.log(err)
   }
