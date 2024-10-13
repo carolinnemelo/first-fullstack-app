@@ -13,8 +13,7 @@ const requestGeneratedKey = async (amountOfChars: number) => {
     body: `${amountOfChars}`,
   });
   const data = await fetchKey.json();
-  
-  return data.turingKey;
+  return data.turingKey.join('');
 };
 
 form?.addEventListener("submit", async (event) => {
