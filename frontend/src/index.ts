@@ -22,5 +22,4 @@ form?.addEventListener("submit", async (event) => {
   const generatedKey = await requestGeneratedKey(amountOfChars);
   displayKeyElement.textContent = generatedKey;
 
-  //   console.log("submitted from addEventListener");
 });
