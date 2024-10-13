@@ -16,7 +16,7 @@ const buildPassword = (passwordLength: number): string[] => {
   const amountOfLetters = passwordLength - amountOfNumbers;
   const randomNumbers = generateRandomNumbers(amountOfNumbers);
   const randomLetters = generateRandomLetters(amountOfLetters);
-  const password = [...randomLetters, ...randomNumbers];
+  const password = [...randomLetters, ...randomNumbers].sort(() => Math.random() - 0.5)
 
   return password;
 };
