@@ -9,16 +9,25 @@ const server = http
   .createServer(async (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.write("Hello world!");
-    const passwordLength = await getBody(req);
-
+    const passwordLength = await handleReq(req);
     const turingKey = await buildPassword(passwordLength);
     console.log(turingKey);
     res.end();
   })
   .listen(port);
 
+
+const handleReq = async (req: any) => {
+  try {
+    const reqBody = await getBody(req);
+    const passwordLength = parseInt(reqBody);
+  } catch (err) {
+    console.log(err)
+  }
+};
+
 const getBody = async (req: any) => {
-  return new Promise((resolve, reject) => {
+  return new Promise<string>((resolve, reject) => {
     let body = "";
 
     req.on("data", async (chunk: any) => {
