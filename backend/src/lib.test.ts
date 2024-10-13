@@ -1,21 +1,21 @@
 import { deepEqual } from "node:assert/strict";
 import test from "node:test";
-import { passwordGenerator } from "./lib";
+import { buildPassword } from "./lib";
 
 test("Should return message when imputed zero numbers", () => {
-  const amountOfChars = 0;
-  const result = passwordGenerator(amountOfChars);
+  const passwordLength = 0;
+  const result = buildPassword(passwordLength);
   deepEqual(result, "zero numbers");
 });
 
 test("Should return one random number", () => {
-  const amountOfChars = 1;
-  const result = passwordGenerator(amountOfChars);
+  const passwordLength = 1;
+  const result = buildPassword(passwordLength);
   deepEqual(result?.length, 1);
 });
 
 test("Should return 5 random numbers", () => {
-  const amountOfChars = 5;
-  const result = passwordGenerator(amountOfChars);
+  const passwordLength = 5;
+  const result = buildPassword(passwordLength);
   deepEqual(result?.length, 5);
 });
