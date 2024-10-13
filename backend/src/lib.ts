@@ -23,20 +23,20 @@ export const buildPassword = (passwordLength: number): string[] => {
 
 export const generateRandomNumbers = (amountOfNumbers: number) => {
   if (amountOfNumbers <= 0) {
-    throw new Error("Invalid amount of numbers");
+    return [];
   }
-  const password = [];
+  const numbers = [];
   for (let i = 0; i < amountOfNumbers; i++) {
     const randomNumbers = Math.floor(Math.random() * 10).toString();
-    password.push(randomNumbers);
+    numbers.push(randomNumbers);
   }
 
-  return password;
+  return numbers;
 };
 
 export const generateRandomLetters = (amountOfLetters: number): string[] => {
   if (amountOfLetters <= 0) {
-    throw new Error("Invalid amount of letters");
+    return [];
   }
   const alphabet = [...Array(26)].map(
     (v, i) => (v = String.fromCharCode(i + 97))

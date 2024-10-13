@@ -5,9 +5,8 @@ import { generateRandomNumbers } from "../lib";
 
 test("Should throw error", () => {
   const passwordLength = 0;
-  throws(() => {
-    generateRandomNumbers(passwordLength);
-  }, /Invalid amount of numbers/)
+  const result = generateRandomNumbers(passwordLength);
+  deepEqual(result, []);
 });
 
 test("Should return one random number", () => {
