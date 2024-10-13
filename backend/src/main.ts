@@ -23,6 +23,8 @@ const getBody = async (req: any) => {
       body += chunk.toString()
     });
 
-
+    req.on("end", () => { 
+        resolve(body)
+    })
   });
 };
