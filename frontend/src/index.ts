@@ -34,8 +34,7 @@ const amountOfChars = amountOfCharsElement.value;
 rangeValueElement.textContent = amountOfChars;
 });
 
-copyButtonElement.addEventListener("click", () => {
-navigator.clipboard.writeText(displayKeyElement.innerHTML).then(() => {
-    copyButtonElement.textContent = "Copied";
+copyButtonElement.addEventListener("click", async () => {
+  await navigator.clipboard.writeText(displayKeyElement.innerHTML);
+  copyButtonElement.textContent = "Copied";
 });
-})
