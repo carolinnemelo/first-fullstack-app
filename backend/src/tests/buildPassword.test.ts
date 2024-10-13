@@ -23,16 +23,15 @@ test("Should return one random letter or number", () => {
   );
 });
 
-test.skip("Should return 5 random letters", () => {
+test("Should return 5 random letters and numbers", () => {
   const alphabet = [...Array(26)].map(
     (v, i) => (v = String.fromCharCode(i + 97))
   );
   const passwordLength = 5;
   const numbersArr = new Array(10).fill(null).map((_, i) => i);
   const result = buildPassword(passwordLength);
-  const boolean = result.every((e) => alphabet.includes(e));
+  const boolean = result.every((e) => alphabet.includes(e) || numbersArr.includes(e));
 
-  console.log(result);
   deepEqual(boolean, true);
   deepEqual(result?.length, 5);
 });

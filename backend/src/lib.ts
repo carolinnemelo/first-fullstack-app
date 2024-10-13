@@ -10,20 +10,14 @@ export const buildPassword = (passwordLength: number) => {
       return password;
     }
     const password = generateRandomLetters(passwordLength);
-    console.log({ password })
-
-
     return password;
   }
   const amountOfNumbers = Math.floor(Math.random() * passwordLength + 1);
   const amountOfLetters = passwordLength - amountOfNumbers;
   const randomNumbers = generateRandomNumbers(amountOfNumbers);
   const randomLetters = generateRandomLetters(amountOfLetters);
-  const password = randomLetters + randomNumbers;
-  console.log({ randomLetters })
-  console.log({ randomNumbers })
-
-  console.log({ password })
+  const password = [...randomLetters, ...randomNumbers];
+  console.log({ password})
   return password;
 };
 
