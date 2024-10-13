@@ -8,20 +8,17 @@ const server = http
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.write("Hello world!");
     const amountOfChars = await getBody(req);
+    console.log(amountOfChars);
     res.end();
   })
   .listen(port);
 
 const getBody = async (req: any) => {
-  let body = "";
-  req.on("data", (chunk: any) => {
+  const body = await req.on("data", async (chunk: any) => {
+    let body = "";
     body += chunk;
-    try {
-      console.log({ body });
-      return body
-    } catch (err) {
-      console.error(err);
-    }
+    return body;
   });
-
+  console.log({ body });
+  return body;
 };
