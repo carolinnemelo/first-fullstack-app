@@ -6,19 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <title>TuringKey</title>
+    <script defer src="./dist/index.js"></script>
+
 </head>
 
 <body>
     <header></header>
-<main>
+<main style="padding: 10rem;">
     <h1>TuringKey</h1>
-    <form action="http://localhost:3000" method="post">
+    <form id="keyForm">
         <h2>Create your TuringKey</h2>
         <div>
             <label for="amountOfCharacters">Amount of characters</label>
             <input type="range" name="Amount of characters" id="amountOfCharacters" min="1" max="30">
         </div>
-        <input type="button" value="Generate">
+        <input type="submit" value="Generate">
     </form>
 </main>
 
