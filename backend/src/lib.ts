@@ -1,6 +1,6 @@
 export const buildPassword = (passwordLength: number) => {
   if (passwordLength <= 0) {
-    return "Invalid Length";
+    throw new Error("Invalid length");
   }
   const password = [];
   for (let i = 0; i < passwordLength; i++) {
@@ -13,7 +13,7 @@ export const buildPassword = (passwordLength: number) => {
 
 export const generateRandomNumbers = (amountOfNumbers: number) => {
   if (amountOfNumbers <= 0) {
-    return "zero numbers";
+    throw new Error("Invalid amount of numbers");
   }
   const password = [];
   for (let i = 0; i < amountOfNumbers; i++) {
