@@ -1,4 +1,4 @@
-export const buildPassword = (passwordLength: number) => {
+export const buildPassword = (passwordLength: number): string[] => {
   if (passwordLength <= 0) {
     throw new Error("Invalid length");
   }
@@ -17,7 +17,7 @@ export const buildPassword = (passwordLength: number) => {
   const randomNumbers = generateRandomNumbers(amountOfNumbers);
   const randomLetters = generateRandomLetters(amountOfLetters);
   const password = [...randomLetters, ...randomNumbers];
-  console.log({ password})
+
   return password;
 };
 
@@ -27,14 +27,14 @@ export const generateRandomNumbers = (amountOfNumbers: number) => {
   }
   const password = [];
   for (let i = 0; i < amountOfNumbers; i++) {
-    const randomNumbers = Math.floor(Math.random() * 10);
+    const randomNumbers = Math.floor(Math.random() * 10).toString();
     password.push(randomNumbers);
   }
-  const parsedPassword = password.join("").toString();
-  return parsedPassword;
+
+  return password;
 };
 
-export const generateRandomLetters = (amountOfLetters: number) => {
+export const generateRandomLetters = (amountOfLetters: number): string[] => {
   if (amountOfLetters <= 0) {
     throw new Error("Invalid amount of letters");
   }
