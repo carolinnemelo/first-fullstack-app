@@ -6,7 +6,6 @@ const generateKey = async (amountOfChars: number) => {
     method: "post",
     body: "3",
   });
-  
   console.log(fetchKey);
 };
 
