@@ -30,10 +30,12 @@ form?.addEventListener("submit", async (event) => {
 });
 
 amountOfCharsElement.addEventListener("input", (event) => {
-    const amountOfChars = amountOfCharsElement.value;
-    rangeValueElement.textContent = amountOfChars;
+const amountOfChars = amountOfCharsElement.value;
+rangeValueElement.textContent = amountOfChars;
 });
 
 copyButtonElement.addEventListener("click", () => {
-    navigator.clipboard.writeText(displayKeyElement.innerHTML)
+navigator.clipboard.writeText(displayKeyElement.innerHTML).then(() => {
+    copyButtonElement.textContent = "Copied"
+});
 })
