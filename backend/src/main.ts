@@ -7,13 +7,14 @@ const host = "localhost";
 const server = http
   .createServer(async (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
-    res.write("Hello world!");
+    // res.writeHead(200, { "Content-type": "text/plain" });
+    // res.write("Hello world!");
     const passwordLength = await handleReq(req);
     if (typeof passwordLength !== "number") {
         return "passwordLength is not a number"
     }
     const turingKey = buildPassword(passwordLength);
-    res.end();
+    res.end(`TuringKey: ${turingKey}`);
   })
   .listen(port);
 
