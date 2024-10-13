@@ -37,5 +37,5 @@ export const generateRandomLetters = (amountOfLetters: number) => {
     const randomLetter = alphabet[randomIndex];
     letters.push(randomLetter);
   }
-  return letters.toString();
+  return letters;
 };
