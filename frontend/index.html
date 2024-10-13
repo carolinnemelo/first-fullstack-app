@@ -1,29 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
     <title>TuringKey</title>
     <script defer src="./dist/index.js"></script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <header></header>
-<main style="padding: 10rem;">
-    <h1>TuringKey</h1>
-    <form id="keyForm" action="http://localhost:3000" method="get">
+    <main style="padding: 10rem">
+      <h1>TuringKey</h1>
+      <form id="keyForm" action="http://localhost:3000" method="get">
         <h2>Create your TuringKey</h2>
         <div>
-            <label for="amountOfCharacters">Amount of characters</label>
-            <input type="range" name="Amount of characters" id="amountOfCharacters" min="1" max="30">
+          <label for="amountOfCharacters">Amount of characters</label>
+          <input
+            type="range"
+            name="Amount of characters"
+            id="amountOfCharacters"
+            min="1"
+            max="30"
+          />
         </div>
-        <input type="submit" value="Generate">
-    </form>
-</main>
-
-</body>
-
+        <input type="submit" value="Generate" />
+      </form>
+    </main>
+  </body>
 </html>
