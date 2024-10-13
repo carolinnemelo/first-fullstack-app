@@ -21,14 +21,17 @@
             <label for="amountOfCharacters">Password Length:</label>
             <div style="display: flex; gap: 2rem; align-items: center;">
                 <input style="padding-top: 1rem;" type="range" name="Amount of characters" id="amountOfCharacters" min="1" max="30" />
-                <span style="line-height: 100%;" id="rangeValue">50</span>
+                <span style="line-height: 100%;" id="rangeValue">16</span>
             </div>
 
           </div>
           <input type="submit" value="Generate" />
         </form>
         <h4>Your new TuringKey is:</h4>
-        <p id="displayKey"></p>
+        <div style="background-color: #f3f3f3;display: flex; gap: 2rem; align-items: center; justify-content: center;">
+            <p style="width: 100%;" id="displayKey"></p>
+            <button style="padding: .2rem .5rem; background-color: lightgray; border: none;" id="copyButton">Copy</button>
+        </div>
       </article>
     </main>
   </body>

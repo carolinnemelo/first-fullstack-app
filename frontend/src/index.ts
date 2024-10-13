@@ -29,4 +29,4 @@ form?.addEventListener("submit", async (event) => {
 amountOfCharsElement.addEventListener("input", (event) => {
     const amountOfChars = amountOfCharsElement.value;
     rangeValueElement.textContent = amountOfChars;
-  });
+});
