@@ -1,4 +1,4 @@
-export const passwordGenerator = (amountOfChars: number) => {
+export const generate = (amountOfChars: number) => {
   if (amountOfChars <= 0) {
     return "zero numbers";
   }

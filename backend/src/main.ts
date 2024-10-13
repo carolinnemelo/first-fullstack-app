@@ -8,6 +8,7 @@ const server = http
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.write("Hello world!");
     const amountOfChars = await getBody(req);
+    const turingKey = await geneatePass
     console.log(amountOfChars);
     res.end();
   })
