@@ -8,13 +8,15 @@ const requestGeneratedKey = async (amountOfChars: number) => {
     method: "post",
     body: `${amountOfChars}`,
   });
-  //   console.log(fetchKey);
+  const data = await fetchKey.text();
+  console.log(data)
+  return data
 };
 
 form?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const amountOfChars = amountOfCharsElement.value;
   const generatedKey = await requestGeneratedKey(amountOfChars);
-  //   console.log(generatedKey);
+    
   //   console.log("submitted from addEventListener");
 });
