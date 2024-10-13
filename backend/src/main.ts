@@ -26,5 +26,9 @@ const getBody = async (req: any) => {
     req.on("end", () => { 
         resolve(body)
     })
+
+    req.on("error", (err: Error) => {
+        reject(err)
+    })
   });
 };
