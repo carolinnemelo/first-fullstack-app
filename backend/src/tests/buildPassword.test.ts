@@ -9,7 +9,7 @@ test("Should return error when password length is bellow or equal to zero", () =
   }, /Invalid length/);
 });
 
-test.skip("Should return one random letter or number", () => {
+test("Should return one random letter or number", () => {
   const alphabet = [...Array(26)].map(
     (v, i) => (v = String.fromCharCode(i + 97))
   );
@@ -17,15 +17,23 @@ test.skip("Should return one random letter or number", () => {
 
   const passwordLength = 1;
   const result = buildPassword(passwordLength);
-  deepEqual(numbersArr.includes(Number(result)), true);
+  deepEqual(
+    numbersArr.includes(Number(result)) || alphabet.includes(result),
+    true
+  );
 });
 
 test.skip("Should return 5 random letters", () => {
+  const alphabet = [...Array(26)].map(
+    (v, i) => (v = String.fromCharCode(i + 97))
+  );
   const passwordLength = 5;
   const numbersArr = new Array(10).fill(null).map((_, i) => i);
   const result = buildPassword(passwordLength);
-  console.log(result)
-  deepEqual(numbersArr.includes(Number(result)), true);
+  const boolean = result.every((e) => alphabet.includes(e));
+
+  console.log(result);
+  deepEqual(boolean, true);
   deepEqual(result?.length, 5);
 });
 
