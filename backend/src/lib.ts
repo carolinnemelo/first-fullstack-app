@@ -1,6 +1,6 @@
 export const buildPassword = (passwordLength: number) => {
   if (passwordLength <= 0) {
-    return "zero numbers";
+    return "Invalid Length";
   }
   const password = [];
   for (let i = 0; i < passwordLength; i++) {
