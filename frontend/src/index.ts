@@ -6,7 +6,7 @@ const amountOfCharsElement = document.querySelector(
 const generateKey = async (amountOfChars: number) => {
   const fetchKey = await fetch("http://localhost:3000", {
     method: "post",
-    body: "3",
+    body: `${amountOfChars}`,
   });
   console.log(fetchKey);
 };

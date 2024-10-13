@@ -1,6 +1,4 @@
-import { rejects } from "assert";
 import http from "http";
-import { resolve } from "path";
 
 const port = 3000;
 const host = "localhost";
@@ -20,15 +18,15 @@ const getBody = async (req: any) => {
     let body = "";
 
     req.on("data", async (chunk: any) => {
-      body += chunk.toString()
+      body += chunk.toString();
     });
 
-    req.on("end", () => { 
-        resolve(body)
-    })
+    req.on("end", () => {
+      resolve(body);
+    });
 
     req.on("error", (err: Error) => {
-        reject(err)
-    })
+      reject(err);
+    });
   });
 };
