@@ -32,9 +32,10 @@ export const generateRandomLetters = (amountOfLetters: number) => {
     (v, i) => (v = String.fromCharCode(i + 97))
   );
   const letters = [];
-  for (let i = 0; i < amountOfLetters; i++) {
-    const randomLetter = Math.floor(Math.random() * 10);
+  for (let a = 0; a < amountOfLetters; a++) {
+    const randomIndex = Math.floor(Math.random() * 26);
+    const randomLetter = alphabet[randomIndex];
     letters.push(randomLetter);
   }
-  return letters;
+  return letters.toString();
 };
