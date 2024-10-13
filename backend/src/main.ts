@@ -13,5 +13,15 @@ const server = http
   .listen(port);
 
 const getBody = async (req: any) => {
-  console.log(req);
+  let body = "";
+  req.on("data", (chunk: any) => {
+    body += chunk;
+    try {
+      console.log({ body });
+      return body
+    } catch (err) {
+      console.error(err);
+    }
+  });
+
 };
