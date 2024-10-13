@@ -13,24 +13,23 @@
 
   <body>
     <header></header>
-    <main style="padding: 10rem">
-      <h1>TuringKey</h1>
-      <form id="keyForm" action="http://localhost:3000" method="get">
-        <h2>Create your TuringKey</h2>
-        <div>
-          <label for="amountOfCharacters">Amount of characters</label>
-          <input
-            type="range"
-            name="Amount of characters"
-            id="amountOfCharacters"
-            min="1"
-            max="30"
-          />
-        </div>
-        <input type="submit" value="Generate" />
-      </form>
+    <main style="padding: 10rem; text-align: center">
       <article>
-        <h3>Your new TuringKey is:</h3>
+        <h1>TuringKey</h1>
+        <form id="keyForm" action="http://localhost:3000" method="get">
+          <div>
+            <label for="amountOfCharacters">Password Length:</label>
+            <input
+              type="range"
+              name="Amount of characters"
+              id="amountOfCharacters"
+              min="1"
+              max="30"
+            />
+          </div>
+          <input type="submit" value="Generate" />
+        </form>
+        <h4>Your new TuringKey is:</h4>
         <p id="displayKey"></p>
       </article>
     </main>
