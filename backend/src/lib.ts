@@ -3,8 +3,15 @@ export const buildPassword = (passwordLength: number) => {
     throw new Error("Invalid length");
   }
   if (passwordLength === 1) {
-    const password = generateRandomNumbers(passwordLength);
+    const randomNumber = Math.floor(Math.random() * 10);
+    if (randomNumber > 5) {
+      const password = generateRandomNumbers(passwordLength);
+      console.log({ password })
+      return password;
+    }
+    const password = generateRandomLetters(passwordLength);
     console.log({ password })
+
 
     return password;
   }

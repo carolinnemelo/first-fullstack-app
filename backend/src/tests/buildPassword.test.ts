@@ -18,7 +18,7 @@ test("Should return one random letter or number", () => {
   const passwordLength = 1;
   const result = buildPassword(passwordLength);
   deepEqual(
-    numbersArr.includes(Number(result)) || alphabet.includes(result),
+    numbersArr.includes(Number(result)) || alphabet.includes(result.toString()),
     true
   );
 });
