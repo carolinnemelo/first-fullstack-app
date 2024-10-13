@@ -1,6 +1,6 @@
 import { deepEqual } from "node:assert/strict";
 import test from "node:test";
-import { buildPassword } from "./lib";
+import { buildPassword } from "../lib";
 
 test("Should return message when imputed zero numbers", () => {
   const passwordLength = 0;
@@ -19,3 +19,5 @@ test("Should return 5 random numbers", () => {
   const result = buildPassword(passwordLength);
   deepEqual(result?.length, 5);
 });
+
+
