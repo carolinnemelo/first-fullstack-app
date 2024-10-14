@@ -2,13 +2,11 @@ import http from "http";
 import { buildPassword } from "./lib";
 
 const port = 3000;
-const host = "localhost";
 
 const server = http
   .createServer(async (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.writeHead(200, { "Content-type": "application/json" });
-    // res.write("Hello world!");
     const passwordLength = await handleReq(req);
     if (typeof passwordLength !== "number") {
         return "passwordLength is not a number"
