@@ -11,11 +11,12 @@
     <script defer src="./dist/index.js"></script>
   </head>
 
-  <body>
+  <body style="background-image: url('./src/back.png'); background-size: cover; background-color: rgba(255, 255, 255, 0.5);background-blend-mode: lighten;">
     <header></header>
-    <main style="padding: 10rem; text-align: center">
-      <article>
-        <h1>TuringKey</h1>
+    <main style="padding: 6rem 15rem; text-align: center">
+      <article style="padding: 4rem;">
+        <h1 style="letter-spacing: 6px;">TURING KEY</h1>
+        <h5>Your key to strong and secure passwords!</h5>
         <form id="keyForm" action="http://localhost:3000" method="get">
           <div>
             <label for="amountOfCharacters">Password Length:</label>
@@ -25,10 +26,10 @@
             </div>
 
           </div>
-          <input type="submit" value="Generate" />
+          <input style="background-color: #BF4050; border: 0;" type="submit" value="Generate" />
         </form>
-        <h4>Your new TuringKey is:</h4>
-        <div style="background-color: #f3f3f3;display: flex; gap: 2rem; align-items: center; justify-content: space-between;">
+        <h5>Your new TuringKey is:</h5>
+        <div style="background-color: #f3f3f3;display: flex; gap: 2rem; align-items: center; justify-content: space-between; ">
             <p style="width: max-content; line-height: 100%; margin-bottom: 0;" id="displayKey"></p>
             <button style="padding: .2rem .5rem; background-color: lightgray; border: none;" id="copyButton">Copy</button>
         </div>
